@@ -9,54 +9,63 @@
 import Foundation
 import CommonCrypto
 
-extension NSData {
+extension Data {
 
 	// MARK: - Digest
 
-	public var MD2: NSData {
-		let hash = Digest.MD2(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var md2: Data {
+		let hash = Digest.md2(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
-	public var MD4: NSData {
-		let hash = Digest.MD4(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var md4: Data {
+		let hash = Digest.md4(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
-	public var MD5: NSData {
-		let hash = Digest.MD5(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var md5: Data {
+		let hash = Digest.md5(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
-	public var SHA1: NSData {
-		let hash = Digest.SHA1(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var sha1: Data {
+		let hash = Digest.sha1(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
-	public var SHA224: NSData {
-		let hash = Digest.SHA224(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var sha224: Data {
+		let hash = Digest.sha224(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
-	public var SHA256: NSData {
-		let hash = Digest.SHA256(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var sha256: Data {
+		let hash = Digest.sha256(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
-	public var SHA384: NSData {
-		let hash = Digest.SHA384(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var sha384: Data {
+		let hash = Digest.sha384(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
-	public var SHA512: NSData {
-		let hash = Digest.SHA512(bytes: bytes, length: UInt32(length))
-		return NSData(bytes: hash, length:  hash.count)
+	public var sha512: Data {
+		let hash = Digest.sha512(bytes: bytes, length: UInt32(count))
+		return Data(bytes: UnsafePointer<UInt8>(hash), count:  hash.count)
 	}
 
 
 	// MARK: - HMAC
 
-	public func HMAC(key key: NSData, algorithm: Crypto.HMAC.Algorithm) -> NSData {
-		return Crypto.HMAC.sign(data: self, algorithm: algorithm, key: key)
+	public func hmac(key: Data, algorithm: HMAC.Algorithm) -> Data {
+		return HMAC.sign(data: self, algorithm: algorithm, key: key) as Data
+	}
+
+
+	// MARK: - Internal
+
+	var bytes: UnsafePointer<UInt8> {
+		let buffer = UnsafeMutablePointer<UInt8>(allocatingCapacity: count)
+		copyBytes(to: buffer, count: count)
+		return UnsafePointer<UInt8>(buffer)
 	}
 }
