@@ -597,36 +597,59 @@
 				TargetAttributes = {
 					2112163C1AE68AD2004E1CE6 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					211216471AE68AD3004E1CE6 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
+						ProvisioningStyle = Automatic;
 					};
 					211216821AE68D26004E1CE6 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					216CAE331AE6B273009A69EF = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					21FD8C5A1AE6B03F008DCDBA = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					21FD8C641AE6B03F008DCDBA = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					80098A501C12E5890029C530 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					80098A6E1C12E87D0029C530 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					80098A771C12E87D0029C530 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					804503271BA209F6002A5470 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 					};
 					804503361BA20F37002A5470 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 676PZY29MZ;
+						DevelopmentTeamName = "Canvas Labs, Inc.";
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -1012,6 +1035,7 @@
 		211216571AE68AD3004E1CE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1032,6 +1056,7 @@
 		211216581AE68AD3004E1CE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
