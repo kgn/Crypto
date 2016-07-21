@@ -56,7 +56,7 @@ public struct HMAC {
 
 	public static func sign(message: String, algorithm: Algorithm, key: String) -> String? {
 		guard let messageData = message.data(using: String.Encoding.utf8),
-			keyData = key.data(using: String.Encoding.utf8)
+			let keyData = key.data(using: String.Encoding.utf8)
 		else { return nil }
 
 		let data = sign(data: messageData, algorithm: algorithm, key: keyData)

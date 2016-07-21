@@ -62,7 +62,7 @@ extension String {
 	private init?(digestData: Data?, length: Int32) {
 		guard let digestData = digestData else { return nil }
 		var digest = [UInt8](repeating: 0, count: Int(length))
-		(digestData as NSData).getBytes(&digest, length: Int(length) * sizeof(UInt8))
+		(digestData as NSData).getBytes(&digest, length: Int(length) * sizeof(UInt8.self))
 
 		var string = ""
 		for i in 0..<length {
