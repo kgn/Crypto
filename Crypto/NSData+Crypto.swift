@@ -64,7 +64,7 @@ extension Data {
 	// MARK: - Internal
 
 	var bytes: UnsafePointer<UInt8> {
-		let buffer = UnsafeMutablePointer<UInt8>(allocatingCapacity: count)
+		let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: count)
 		copyBytes(to: buffer, count: count)
 		return UnsafePointer<UInt8>(buffer)
 	}

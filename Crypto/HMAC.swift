@@ -48,7 +48,7 @@ public struct HMAC {
 	// MARK: - Signing
 
 	public static func sign(data: Data, algorithm: Algorithm, key: Data) -> Data {
-		let signature = UnsafeMutablePointer<CUnsignedChar>(allocatingCapacity: algorithm.digestLength)
+		let signature = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: algorithm.digestLength)
 		CCHmac(algorithm.algorithm, key.bytes, key.count, data.bytes, data.count, signature)
 
 		return Data(bytes: UnsafePointer<UInt8>(signature), count: algorithm.digestLength)
